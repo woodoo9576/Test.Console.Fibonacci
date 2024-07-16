@@ -8,16 +8,15 @@ namespace Test.Console
 
     class Program
     {
-        public class Rectangle
+        public class Rectangle(int height, int width)
         {
-            public Rectangle(int height, int width) => (Height, Width) = (height, width);
-
-            public int Width { get; }
-            public int Height { get;}
+            public int Width { get; } = width;
+            public int Height { get; } = height;
 
             public int Area => Width * Height;
-            public void DisplayArea()=> Console.WriteLine($"Area: {Area}");
+            public void DisplayArea() => Console.WriteLine($"Area: {Area}");
         }
+
         static void Main(string[] args)
         {
             /*
@@ -26,11 +25,12 @@ namespace Test.Console
             int? a = int?.Parse(Console.ReadLine());
             Console.WriteLine("Bitiş Sayısını Giriniz: ");
             int? b = int?.Parse(Console.ReadLine()!);
-            
+
             Fibonacci(a ?? 10, b ?? 20);
             */
             Rectangle rectangle = new Rectangle(10, 20);
             rectangle.DisplayArea();
+
             void Fibonacci(BigInteger x, BigInteger y)
             {
                 BigInteger c = 0;
