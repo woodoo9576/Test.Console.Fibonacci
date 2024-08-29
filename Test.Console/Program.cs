@@ -8,29 +8,13 @@ namespace Test.Console
 
     class Program
     {
-        public class Rectangle(int height, int width)
-        {
-            public int Width { get; } = width;
-            public int Height { get; } = height;
-
-            public int Area => Width * Height;
-            public void DisplayArea() => Console.WriteLine($"Area: {Area}");
-        }
-
         static void Main(string[] args)
         {
-            /*
-            Console.WriteLine("Hello, World!");
             Console.WriteLine("Başlangıç Sayısını Giriniz: ");
-            int? a = int?.Parse(Console.ReadLine());
+            var a = BigInteger.Parse(Console.ReadLine());
             Console.WriteLine("Bitiş Sayısını Giriniz: ");
-            int? b = int?.Parse(Console.ReadLine()!);
-
-            Fibonacci(a ?? 10, b ?? 20);
-            */
-            Rectangle rectangle = new Rectangle(10, 20);
-            rectangle.DisplayArea();
-
+            var b = BigInteger.Parse(Console.ReadLine());
+            Fibonacci(a == 0 ? new BigInteger(10) : a, b == 0 ? new BigInteger(20) : b);
             void Fibonacci(BigInteger x, BigInteger y)
             {
                 BigInteger c = 0;
